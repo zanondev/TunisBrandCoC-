@@ -1,0 +1,5 @@
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Console\obj\Debug\net5.0\TunisBrandCo.Console.csproj.AssemblyReference.cache
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Console\obj\Debug\net5.0\TunisBrandCo.Console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Console\obj\Debug\net5.0\TunisBrandCo.Console.AssemblyInfoInputs.cache
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Console\obj\Debug\net5.0\TunisBrandCo.Console.AssemblyInfo.cs
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Console\obj\Debug\net5.0\TunisBrandCo.Console.csproj.CoreCompileInputs.cache

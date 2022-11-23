@@ -9,7 +9,7 @@ using TunisBrandCo.Domain.Features.Clients;
 
 namespace TunisBrandCo.Domain.Features.Orders
 {
-    internal class Order
+    public class Order
     {
         public int Id { get; set; }
         public Product Product { get; set; }
