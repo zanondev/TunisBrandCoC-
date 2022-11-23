@@ -10,3 +10,9 @@ C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Infra.Data\obj\Deb
 C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Infra.Data\obj\Debug\net5.0\refint\TunisBrandCo.Infra.Data.dll
 C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Infra.Data\obj\Debug\net5.0\TunisBrandCo.Infra.Data.pdb
 C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Infra.Data\obj\Debug\net5.0\ref\TunisBrandCo.Infra.Data.dll
+C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Infra.Data\bin\Debug\net5.0\TunisBrandCo.Infra.Data.runtimeconfig.json
+C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Infra.Data\bin\Debug\net5.0\TunisBrandCo.Infra.Data.runtimeconfig.dev.json
+C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Infra.Data\bin\Debug\net5.0\TunisBrandCo.Domain.dll
+C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Infra.Data\bin\Debug\net5.0\TunisBrandCo.Domain.pdb
+C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Infra.Data\obj\Debug\net5.0\TunisBrandCo.Infra.Data.csproj.CopyComplete
+C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Infra.Data\obj\Debug\net5.0\TunisBrandCo.Infra.Data.genruntimeconfig.cache

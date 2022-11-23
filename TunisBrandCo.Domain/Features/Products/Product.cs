@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TunisBrandCo.Domain.Features.Orders;
 
 namespace TunisBrandCo.Domain.Features.Products
 {
@@ -14,6 +15,7 @@ namespace TunisBrandCo.Domain.Features.Products
         public int StockQuantity { get; set; }
         public bool IsActive { get; set; }
         public string Description { get; set; }
+        public Order Order { get; set; }
 
         public Product(int id, decimal price, DateTime expiryDate, int stockQuantity, bool isActive, string description)
         {

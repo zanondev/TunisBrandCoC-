@@ -10,3 +10,6 @@ C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Domain\obj\Debug\n
 C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Domain\obj\Debug\net5.0\refint\TunisBrandCo.Domain.dll
 C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Domain\obj\Debug\net5.0\TunisBrandCo.Domain.pdb
 C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Domain\obj\Debug\net5.0\ref\TunisBrandCo.Domain.dll
+C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Domain\bin\Debug\net5.0\TunisBrandCo.Domain.runtimeconfig.json
+C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Domain\bin\Debug\net5.0\TunisBrandCo.Domain.runtimeconfig.dev.json
+C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Domain\obj\Debug\net5.0\TunisBrandCo.Domain.genruntimeconfig.cache
