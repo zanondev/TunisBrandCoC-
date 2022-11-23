@@ -73,16 +73,6 @@ namespace TunisBrandCo.Infra.Data.Features.Products
         //    }
         //}
 
-
-        //    CREATE TABLE PRODUCT(
-        //ID INT IDENTITY(1,1) NOT NULL,
-        //PRICE DECIMAL(10,2) NOT NULL,
-        //EXPIRYDATE DATE NULL,
-        //PRODUCT_DESCRIPTION VARCHAR(100) NOT NULL,
-        //STOCK_QUANTITY INT NOT NULL,
-        //ISACTIVE BIT NOT NULL
-        //CONSTRAINT PK_PRODUCT PRIMARY KEY(ID)
-
         public void AddStock(Product product, int quantity)
         {
             using (var connection = new SqlConnection(_connectionString))
