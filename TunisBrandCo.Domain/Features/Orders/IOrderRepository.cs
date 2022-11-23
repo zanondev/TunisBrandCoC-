@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TunisBrandCo.Domain.Features.Products;
 
 namespace TunisBrandCo.Domain.Features.Orders
 {
     public interface IOrderRepository
     {
+
+        void AddOrder(Order newOrder);
+        void DeleteOrder(int OrderId);
+        void GetStatus(Order Order);
+        void UpdateStatus(int status);
     }
 }

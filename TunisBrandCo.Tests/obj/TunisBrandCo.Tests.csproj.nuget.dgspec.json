@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucas.zanon\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Tests\\TunisBrandCo.Tests.csproj": {}
+    "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Tests\\TunisBrandCo.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lucas.zanon\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Tests\\TunisBrandCo.Tests.csproj": {
+    "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Tests\\TunisBrandCo.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucas.zanon\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Tests\\TunisBrandCo.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Tests\\TunisBrandCo.Tests.csproj",
         "projectName": "TunisBrandCo.Tests",
-        "projectPath": "C:\\Users\\lucas.zanon\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Tests\\TunisBrandCo.Tests.csproj",
-        "packagesPath": "C:\\Users\\lucas.zanon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucas.zanon\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Tests\\obj\\",
+        "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Tests\\TunisBrandCo.Tests.csproj",
+        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Tests\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lucas.zanon\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +40,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.1.0, )"
@@ -59,6 +59,10 @@
             "NUnit3TestAdapter": {
               "target": "Package",
               "version": "[4.2.1, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
             },
             "coverlet.collector": {
               "target": "Package",
@@ -81,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

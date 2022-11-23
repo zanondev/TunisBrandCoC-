@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TunisBrandCo.Infra.Data.Features.Clients
 {
-    internal class ClientDAO
+    public class ClientDAO
     {
+
     }
 }
