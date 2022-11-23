@@ -26,3 +26,13 @@ C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.API\obj\Debug\net5
 C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.API\obj\Debug\net5.0\TunisBrandCo.API.pdb
 C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.API\obj\Debug\net5.0\TunisBrandCo.API.genruntimeconfig.cache
 C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.API\obj\Debug\net5.0\ref\TunisBrandCo.API.dll
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.API\obj\Debug\net5.0\TunisBrandCo.API.csproj.AssemblyReference.cache
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.API\obj\Debug\net5.0\TunisBrandCo.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.API\obj\Debug\net5.0\TunisBrandCo.API.AssemblyInfoInputs.cache
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.API\obj\Debug\net5.0\TunisBrandCo.API.AssemblyInfo.cs
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.API\obj\Debug\net5.0\TunisBrandCo.API.csproj.CoreCompileInputs.cache
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.API\obj\Debug\net5.0\TunisBrandCo.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.API\obj\Debug\net5.0\TunisBrandCo.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.API\obj\Debug\net5.0\TunisBrandCo.API.dll
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.API\obj\Debug\net5.0\refint\TunisBrandCo.API.dll
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.API\obj\Debug\net5.0\TunisBrandCo.API.pdb

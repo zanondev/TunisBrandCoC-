@@ -11,7 +11,7 @@ namespace TunisBrandCo.Domain.Features.Products
     {
         void AddProduct(Product newProduct);
         void UpdateProduct(Product editedProduct);
-        void UpdateStatusProduct(int productId);
-        void AddStockProduct(Product product, int quantity);
+        void UpdateStatus(int productId);
+        void AddStock(Product product, int quantity);
     }
 }

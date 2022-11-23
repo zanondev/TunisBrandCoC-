@@ -9,5 +9,24 @@ namespace TunisBrandCo.Infra.Data.Features.Orders
 {
     internal class OrderRepository : IOrderRepository
     {
+        public void AddOrder(Order newOrder)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteOrder(int OrderId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GetStatus(Order Order)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateStatus(int status)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

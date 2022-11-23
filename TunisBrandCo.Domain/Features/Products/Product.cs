@@ -15,16 +15,20 @@ namespace TunisBrandCo.Domain.Features.Products
         public bool IsActive { get; set; }
         public string Description { get; set; }
 
-        public Product(int id, decimal price, DateTime expiryDate, int stockQuantity, bool isActive, string description)
+        public Product(int id, decimal price, DateTime expiryDate, int stockQuantity, string description)
         {
             Id = id;
             Price = price;
             ExpiryDate = expiryDate;
             StockQuantity = stockQuantity;
-            IsActive = isActive;
             Description = description;
 
-            isActive = true;
+            IsActive = true;
+        }
+
+        public Product()
+        {
+
         }
     }
 }

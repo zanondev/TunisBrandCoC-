@@ -9,7 +9,6 @@ namespace TunisBrandCo.Domain.Features.Orders
 {
     public interface IOrderRepository
     {
-
         void AddOrder(Order newOrder);
         void DeleteOrder(int OrderId);
         void GetStatus(Order Order);

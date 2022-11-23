@@ -17,9 +17,9 @@ namespace TunisBrandCo.Domain.Features.Orders
         public int ProductQuantity { get; set; }
         public decimal TotalPrice { get; set; }
         public DateTime OrderDate { get; set; }
-        public Enum Status { get; set; }
+        public int Status { get; set; }
 
-        public Order(int id, Product product, Client client, int productQuantity, decimal totalPrice, DateTime orderDate, Enum status)
+        public Order(int id, Product product, Client client, int productQuantity, decimal totalPrice, DateTime orderDate, int status)
         {
             Id = id;
             Product = product;
@@ -30,7 +30,7 @@ namespace TunisBrandCo.Domain.Features.Orders
             Status = status;
         }
 
-        public Order(int id, Product product, int productQuantity, decimal totalPrice, DateTime orderDate, Enum status)
+        public Order(int id, Product product, int productQuantity, decimal totalPrice, DateTime orderDate, int status)
         {
             Id = id;
             Product = product;
@@ -38,6 +38,11 @@ namespace TunisBrandCo.Domain.Features.Orders
             TotalPrice = totalPrice;
             OrderDate = orderDate;
             Status = status;
+        }
+
+        public Order()
+        {
+
         }
     }
 }

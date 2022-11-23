@@ -3009,9 +3009,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Microsoft.Data.SqlClient >= 5.0.1",
       "Swashbuckle.AspNetCore >= 5.6.3",
-      "System.Data.SqlClient >= 4.8.5",
       "TunisBrandCo.Domain >= 1.0.0",
       "TunisBrandCo.Infra.Data >= 1.0.0"
     ]
@@ -3062,17 +3060,9 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
-          "Microsoft.Data.SqlClient": {
-            "target": "Package",
-            "version": "[5.0.1, )"
-          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[5.6.3, )"
-          },
-          "System.Data.SqlClient": {
-            "target": "Package",
-            "version": "[4.8.5, )"
           }
         },
         "imports": [
