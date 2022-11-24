@@ -1,27 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TunisBrandCo.Domain.Features.Clients;
 
 namespace TunisBrandCo.Infra.Data.Features.Clients
 {
-    internal class ClientRepository : IClientRepository
+    public class ClientRepository : IClientRepository
     {
+        private readonly ClientDAO _clientDAO;
+
+        public ClientRepository()
+        {
+            _clientDAO = new ClientDAO();
+        }
         public void AddClient(Client newClient)
         {
-            throw new NotImplementedException();
+            _clientDAO.AddClient(newClient);
         }
 
         public void DeleteClient(int clientId)
         {
-            throw new NotImplementedException();
+            _clientDAO.DeleteCliente(clientId);
         }
 
         public void UpdateClient(Client editedClient)
         {
-            throw new NotImplementedException();
+            _clientDAO.UpdateClient(editedClient);
         }
     }
 }

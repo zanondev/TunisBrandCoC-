@@ -24,6 +24,28 @@ namespace TunisBrandCo.Infra.Data.Features.Clients
             }
         }
 
+        public Client GetClientById(int clientId)
+        {
+            var client = new Client();
+            using (var conexao = new SqlConnection(_connectionString))
+            {
+                conexao.Open();
+                using (var comando = new SqlCommand())
+                {
+                    comando.Connection = conexao;
+                    string sql = @"SELECT * FROM CLIENT WHERE ID = @ID";
+                    comando.CommandText = sql;
+                    comando.Parameters.AddWithValue("@ID", clientId);
+                    var reader = comando.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        client = ConvertSqlToObjetc(reader);
+                    };
+                    return client;
+                }
+            }
+        }
+
         public void DeleteCliente(int clientId)
         {
             using (var connection = new SqlConnection(_connectionString))

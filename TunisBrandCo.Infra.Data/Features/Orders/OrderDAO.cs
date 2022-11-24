@@ -24,6 +24,44 @@ namespace TunisBrandCo.Infra.Data.Features.Orders
             }
         }
 
+        public Order GetOrderById(int ordertId)
+        {
+            var order = new Order();
+            using (var conexao = new SqlConnection(_connectionString))
+            {
+                conexao.Open();
+                using (var comando = new SqlCommand())
+                {
+                    comando.Connection = conexao;
+                    string sql = @"SELECT * FROM ORDER WHERE ID = @ID";
+                    comando.CommandText = sql;
+                    comando.Parameters.AddWithValue("@ID", ordertId);
+                    var reader = comando.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        order = ConvertSqlToObjetc(reader);
+                    };
+                    return order;
+                }
+            }
+        }
+
+        public void DeleteOrder(int orderId)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (var DoCommand = new SqlCommand())
+                {
+                    DoCommand.Connection = connection;
+                    string sql = @"DELETE FROM ORDER WHERE ID = @ID;";
+                    DoCommand.Parameters.AddWithValue("@CPF", orderId);
+                    DoCommand.CommandText = sql;
+                    DoCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
         internal Order GetStatusById(int Orderid)
         {
             var order = new Order();

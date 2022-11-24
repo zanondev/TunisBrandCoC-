@@ -9,19 +9,27 @@ namespace TunisBrandCo.Infra.Data.Features.Products
 {
     internal class ProductRepository : IProductRepository
     {
+        private readonly ProductDAO _productDAO;
+
+        public OrderRepository()
+        {
+            _productDAO = new ProductDAO();
+        }
+
         public void AddProduct(Product newProduct)
         {
-            throw new NotImplementedException();
+            _productDAO.AddProduct(newProduct);
         }
 
         public void AddStock(Product product, int quantity)
         {
-            throw new NotImplementedException();
+            _productDAO.AddStock(product, quantity);
+            //duvida
         }
 
         public void UpdateProduct(Product editedProduct)
         {
-            throw new NotImplementedException();
+           _productDAO.UpdateProduct(editedProduct);
         }
 
         public void UpdateStatus(int productId)
