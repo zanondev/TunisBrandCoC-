@@ -11,7 +11,7 @@ namespace TunisBrandCo.Infra.Data.Features.Products
     {
         private readonly ProductDAO _productDAO;
 
-        public OrderRepository()
+        public ProductRepository()
         {
             _productDAO = new ProductDAO();
         }

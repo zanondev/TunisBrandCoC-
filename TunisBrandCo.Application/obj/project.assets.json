@@ -947,6 +947,22 @@
         "runtime": {
           "bin/placeholder/TunisBrandCo.Domain.dll": {}
         }
+      },
+      "TunisBrandCo.Infra.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Microsoft.Extensions.Logging": "5.0.0",
+          "System.Data.SqlClient": "4.8.5",
+          "TunisBrandCo.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TunisBrandCo.Infra.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TunisBrandCo.Infra.Data.dll": {}
+        }
       }
     }
   },
@@ -3010,14 +3026,18 @@
       "type": "project",
       "path": "../TunisBrandCo.Domain/TunisBrandCo.Domain.csproj",
       "msbuildProject": "../TunisBrandCo.Domain/TunisBrandCo.Domain.csproj"
+    },
+    "TunisBrandCo.Infra.Data/1.0.0": {
+      "type": "project",
+      "path": "../TunisBrandCo.Infra.Data/TunisBrandCo.Infra.Data.csproj",
+      "msbuildProject": "../TunisBrandCo.Infra.Data/TunisBrandCo.Infra.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Microsoft.Data.SqlClient >= 5.0.1",
       "Microsoft.Extensions.Logging >= 5.0.0",
-      "System.Data.SqlClient >= 4.8.5",
-      "TunisBrandCo.Domain >= 1.0.0"
+      "TunisBrandCo.Domain >= 1.0.0",
+      "TunisBrandCo.Infra.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3026,11 +3046,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Infra.Data\\TunisBrandCo.Infra.Data.csproj",
-      "projectName": "TunisBrandCo.Infra.Data",
-      "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Infra.Data\\TunisBrandCo.Infra.Data.csproj",
+      "projectUniqueName": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Application\\TunisBrandCo.Application.csproj",
+      "projectName": "TunisBrandCo.Application",
+      "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Application\\TunisBrandCo.Application.csproj",
       "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Infra.Data\\obj\\",
+      "outputPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3049,6 +3069,9 @@
           "projectReferences": {
             "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Domain\\TunisBrandCo.Domain.csproj": {
               "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Domain\\TunisBrandCo.Domain.csproj"
+            },
+            "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Infra.Data\\TunisBrandCo.Infra.Data.csproj": {
+              "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Infra.Data\\TunisBrandCo.Infra.Data.csproj"
             }
           }
         }
@@ -3063,17 +3086,9 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
-          "Microsoft.Data.SqlClient": {
-            "target": "Package",
-            "version": "[5.0.1, )"
-          },
           "Microsoft.Extensions.Logging": {
             "target": "Package",
             "version": "[5.0.0, )"
-          },
-          "System.Data.SqlClient": {
-            "target": "Package",
-            "version": "[4.8.5, )"
           }
         },
         "imports": [
