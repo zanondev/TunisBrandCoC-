@@ -7,7 +7,9 @@ namespace TunisBrandCo.Infra.Data.Features.Clients
 {
     public class ClientDAO
     {
-        private const string _connectionString = @"Data Source=.\SQLEXPRESS;initial catalog=SERRALINHASAEREASDB;uid=sa;pwd=tunico;";
+        private const string _connectionString = @"Data Source=.\SQLEXPRESS;initial catalog=TUNISBRANDCO_DB;uid=sa;pwd=tunico;";
+
+        //TUNISBRANDCO_DB
 
         public void AddClient(Client newClient)
         {
@@ -17,7 +19,7 @@ namespace TunisBrandCo.Infra.Data.Features.Clients
                 using (var DoCommand = new SqlCommand())
                 {
                     DoCommand.Connection = connection;
-                    string sql = @"INSERT CLIENT VALUES (@CPF, @CLIENT_NAME, @BIRTHDATE, @LOYALTY_POINTS);";
+                    string sql = @"INSERT INTO CLIENT (CPF, CLIENT_NAME, BIRTHDATE) VALUES (@CPF, @CLIENT_NAME, @BIRTHDATE, @LOYALTYPOINTS);";
                     ConvertObjectToSql(newClient, DoCommand);
                     DoCommand.CommandText = sql;
                     DoCommand.ExecuteNonQuery(); 
@@ -132,11 +134,13 @@ namespace TunisBrandCo.Infra.Data.Features.Clients
         private Client ConvertSqlToObjetc(SqlDataReader reader)
         {
             Client client = new Client();
+
             client.Id = Convert.ToInt32(reader["ID"].ToString());
             client.Cpf = reader["CPF"].ToString();
             client.Name = reader["CLIENT_NAME"].ToString();
             client.BirthDate = Convert.ToDateTime(reader["BIRTHDATE"].ToString());
             client.LoyaltyPoints = Convert.ToDecimal(reader["LOYALTY_POINTS"].ToString());
+
 
             return client;
         }

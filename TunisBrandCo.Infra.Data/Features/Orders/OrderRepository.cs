@@ -8,7 +8,7 @@ using TunisBrandCo.Infra.Data.Features.Clients;
 
 namespace TunisBrandCo.Infra.Data.Features.Orders
 {
-    internal class OrderRepository : IOrderRepository
+    public class OrderRepository : IOrderRepository
     {
         private readonly OrderDAO _orderDAO;
 

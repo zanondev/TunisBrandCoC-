@@ -19,11 +19,15 @@ namespace TunisBrandCo.Application.Features.Client
         private readonly ClientDAO _clientDAO;
         private readonly ILogger _logger;
 
-        public ClientService(IClientRepository clientRepository, ILogger logger, ClientDAO clientDAO)
+        public ClientService(IClientRepository clientRepository, ClientDAO clientDAO)
         {
             _clientRepository = new ClientRepository();
-            _logger = logger;
             _clientDAO = clientDAO;
+        }
+
+        public ClientService()
+        {
+
         }
 
         public Domain.Features.Clients.Client AddClient(Domain.Features.Clients.Client newClient)
@@ -39,7 +43,6 @@ namespace TunisBrandCo.Application.Features.Client
             }
 
             _clientRepository.AddClient(newClient);
-            _logger.LogInformation("Client create successfull; Id:{perimeterId}", newClient.Cpf);
 
             return newClient;
         }
@@ -56,10 +59,31 @@ namespace TunisBrandCo.Application.Features.Client
             return "Cliente deletado com sucesso!";
         }
 
+        public string UpdateClient(Domain.Features.Clients.Client editedClient)
+        {
+            var client = _clientRepository.GetClientByCpf(editedClient.Cpf);
+
+            if ((client.Id != editedClient.Id) || editedClient == null)
+                throw new NotFoundException($"Client: {client.Cpf} doesn't exists.");
+
+            client.Cpf = editedClient.Cpf;
+            client.BirthDate = editedClient.BirthDate;
+            client.Name = editedClient.Name;
+
+            _clientRepository.UpdateClient(client);
+            _logger.LogInformation($"Client create successfull");
+
+            return "Cliente alterado com sucesso!";
+        }
 
 
-        
 
-          
+
+
+
+
+
+
+
     }
 }

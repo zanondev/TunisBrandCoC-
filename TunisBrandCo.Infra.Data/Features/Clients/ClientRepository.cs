@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TunisBrandCo.Domain.Features.Clients;
 
 namespace TunisBrandCo.Infra.Data.Features.Clients
@@ -26,14 +27,14 @@ namespace TunisBrandCo.Infra.Data.Features.Clients
             _clientDAO.UpdateClient(editedClient);
         }
 
-        public void GetClientByCpf(string cpf)
+        public List<Client> GetAllClients()
         {
-            _clientDAO.GetClientByCpf(cpf);
+           return _clientDAO.GetAllClients();
         }
 
-        public void GetAllClients(string cpf)
+        Client IClientRepository.GetClientByCpf(string cpf)
         {
-            _clientDAO.GetAllClients();
+            return _clientDAO.GetClientByCpf(cpf);
         }
     }
 }

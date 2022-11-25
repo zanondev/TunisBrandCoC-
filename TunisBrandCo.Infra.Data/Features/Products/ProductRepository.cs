@@ -7,7 +7,7 @@ using TunisBrandCo.Domain.Features.Products;
 
 namespace TunisBrandCo.Infra.Data.Features.Products
 {
-    internal class ProductRepository : IProductRepository
+    public class ProductRepository : IProductRepository
     {
         private readonly ProductDAO _productDAO;
 
