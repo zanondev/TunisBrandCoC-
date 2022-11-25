@@ -25,5 +25,15 @@ namespace TunisBrandCo.Infra.Data.Features.Clients
         {
             _clientDAO.UpdateClient(editedClient);
         }
+
+        public void GetClientByCpf(string cpf)
+        {
+            _clientDAO.GetClientByCpf(cpf);
+        }
+
+        public void GetAllClients(string cpf)
+        {
+            _clientDAO.GetAllClients();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using TunisBrandCo.Domain.Features.Clients;
 
@@ -42,6 +43,50 @@ namespace TunisBrandCo.Infra.Data.Features.Clients
                         client = ConvertSqlToObjetc(reader);
                     };
                     return client;
+                }
+            }
+        }
+
+        public List<Client> GetAllClients()
+        {
+            var clientList = new List<Client>();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (var DoCommand = new SqlCommand())
+                {
+                    DoCommand.Connection = connection;
+                    string sql = @"SELECT * FROM CLIENT";
+                    DoCommand.CommandText = sql;
+                    SqlDataReader reader = DoCommand.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Client wantedClient = ConvertSqlToObjetc(reader);
+                        clientList.Add(wantedClient);
+                    }
+                }
+            }
+            return clientList;
+        }
+
+        public Client GetClientByCpf(string cpf)
+        {
+            var wantedClient = new Client();
+            using (var conexao = new SqlConnection(_connectionString))
+            {
+                conexao.Open();
+                using (var comando = new SqlCommand())
+                {
+                    comando.Connection = conexao;
+                    string sql = @"SELECT * FROM CLIENT WHERE CPF = @CPF";
+                    comando.CommandText = sql;
+                    comando.Parameters.AddWithValue("@CPF", cpf);
+                    var reader = comando.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        wantedClient = ConvertSqlToObjetc(reader);
+                    };
+                    return wantedClient;
                 }
             }
         }

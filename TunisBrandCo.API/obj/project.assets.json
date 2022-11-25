@@ -1023,6 +1023,21 @@
           }
         }
       },
+      "TunisBrandCo.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "5.0.0",
+          "TunisBrandCo.Domain": "1.0.0",
+          "TunisBrandCo.Infra.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TunisBrandCo.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TunisBrandCo.Application.dll": {}
+        }
+      },
       "TunisBrandCo.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -3219,6 +3234,11 @@
         "version.txt"
       ]
     },
+    "TunisBrandCo.Application/1.0.0": {
+      "type": "project",
+      "path": "../TunisBrandCo.Application/TunisBrandCo.Application.csproj",
+      "msbuildProject": "../TunisBrandCo.Application/TunisBrandCo.Application.csproj"
+    },
     "TunisBrandCo.Domain/1.0.0": {
       "type": "project",
       "path": "../TunisBrandCo.Domain/TunisBrandCo.Domain.csproj",
@@ -3234,24 +3254,30 @@
     "net5.0": [
       "Microsoft.Extensions.Logging >= 5.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3",
+      "TunisBrandCo.Application >= 1.0.0",
       "TunisBrandCo.Domain >= 1.0.0",
       "TunisBrandCo.Infra.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lucas\\.nuget\\packages\\": {}
+    "C:\\Users\\lucas.zanon\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.API\\TunisBrandCo.API.csproj",
+      "projectUniqueName": "C:\\Users\\lucas.zanon\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.API\\TunisBrandCo.API.csproj",
       "projectName": "TunisBrandCo.API",
-      "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.API\\TunisBrandCo.API.csproj",
-      "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.API\\obj\\",
+      "projectPath": "C:\\Users\\lucas.zanon\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.API\\TunisBrandCo.API.csproj",
+      "packagesPath": "C:\\Users\\lucas.zanon\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lucas.zanon\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.API\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lucas.zanon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3265,11 +3291,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Domain\\TunisBrandCo.Domain.csproj": {
-              "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Domain\\TunisBrandCo.Domain.csproj"
+            "C:\\Users\\lucas.zanon\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Application\\TunisBrandCo.Application.csproj": {
+              "projectPath": "C:\\Users\\lucas.zanon\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Application\\TunisBrandCo.Application.csproj"
             },
-            "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Infra.Data\\TunisBrandCo.Infra.Data.csproj": {
-              "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Infra.Data\\TunisBrandCo.Infra.Data.csproj"
+            "C:\\Users\\lucas.zanon\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Domain\\TunisBrandCo.Domain.csproj": {
+              "projectPath": "C:\\Users\\lucas.zanon\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Domain\\TunisBrandCo.Domain.csproj"
+            },
+            "C:\\Users\\lucas.zanon\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Infra.Data\\TunisBrandCo.Infra.Data.csproj": {
+              "projectPath": "C:\\Users\\lucas.zanon\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Infra.Data\\TunisBrandCo.Infra.Data.csproj"
             }
           }
         }
@@ -3312,7 +3341,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
