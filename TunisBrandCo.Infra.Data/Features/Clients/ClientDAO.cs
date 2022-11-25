@@ -19,7 +19,7 @@ namespace TunisBrandCo.Infra.Data.Features.Clients
                 using (var DoCommand = new SqlCommand())
                 {
                     DoCommand.Connection = connection;
-                    string sql = @"INSERT INTO CLIENT (CPF, CLIENT_NAME, BIRTHDATE) VALUES (@CPF, @CLIENT_NAME, @BIRTHDATE, @LOYALTYPOINTS);";
+                    string sql = @"INSERT INTO CLIENT (CPF, CLIENT_NAME, BIRTHDATE) VALUES (@CPF, @CLIENT_NAME, @BIRTHDATE);";
                     ConvertObjectToSql(newClient, DoCommand);
                     DoCommand.CommandText = sql;
                     DoCommand.ExecuteNonQuery(); 
@@ -150,7 +150,7 @@ namespace TunisBrandCo.Infra.Data.Features.Clients
             doCommand.Parameters.AddWithValue("@CPF", client.Cpf);
             doCommand.Parameters.AddWithValue("@CLIENT_NAME", client.Name);
             doCommand.Parameters.AddWithValue("@BIRTHDATE", client.BirthDate);
-            doCommand.Parameters.AddWithValue("@LOYALTY_POINTS", client.LoyaltyPoints);
+            
         }
     }
 }
