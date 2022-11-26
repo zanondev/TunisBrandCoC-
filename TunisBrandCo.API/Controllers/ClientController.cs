@@ -17,12 +17,11 @@ namespace TunisBrandCo.API.Controllers
     {
         private readonly IClientRepository _clientRepository;
         private readonly ClientService _clientService;
-        private readonly ClientDAO _clientDAO;
 
         public ClientController()
         {
             _clientRepository = new ClientRepository();
-            _clientService = new ClientService(_clientRepository, _clientDAO);
+            _clientService = new ClientService(_clientRepository);
         }
 
         [HttpPost]

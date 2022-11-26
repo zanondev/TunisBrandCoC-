@@ -102,7 +102,7 @@ namespace TunisBrandCo.Infra.Data.Features.Clients
                 {
                     DoCommand.Connection = connection;
                     string sql = @"DELETE FROM CLIENT WHERE ID = @ID;";
-                    DoCommand.Parameters.AddWithValue("@CPF", clientId);
+                    DoCommand.Parameters.AddWithValue("@ID", clientId);
                     DoCommand.CommandText = sql;
                     DoCommand.ExecuteNonQuery();
                 }

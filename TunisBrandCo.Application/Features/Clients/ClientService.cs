@@ -16,18 +16,10 @@ namespace TunisBrandCo.Application.Features.Client
     public class ClientService
     {
         private readonly IClientRepository _clientRepository;
-        private readonly ClientDAO _clientDAO;
-        private readonly ILogger _logger;
 
-        public ClientService(IClientRepository clientRepository, ClientDAO clientDAO)
+        public ClientService(IClientRepository clientRepository)
         {
             _clientRepository = new ClientRepository();
-            _clientDAO = clientDAO;
-        }
-
-        public ClientService()
-        {
-
         }
 
         public Domain.Features.Clients.Client AddClient(Domain.Features.Clients.Client newClient)
@@ -65,13 +57,12 @@ namespace TunisBrandCo.Application.Features.Client
 
             if ((client.Id != editedClient.Id) || editedClient == null)
                 throw new NotFoundException($"Client: {client.Cpf} doesn't exists.");
-
+            
             client.Cpf = editedClient.Cpf;
             client.BirthDate = editedClient.BirthDate;
             client.Name = editedClient.Name;
 
             _clientRepository.UpdateClient(client);
-            _logger.LogInformation($"Client create successfull");
 
             return "Cliente alterado com sucesso!";
         }
