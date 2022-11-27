@@ -13,7 +13,7 @@ namespace TunisBrandCo.Infra.Data.Features.Products
 {
     public class ProductDAO
     {
-        private const string _connectionString = @"Data Source=.\SQLEXPRESS;initial catalog=SERRALINHASAEREASDB;uid=sa;pwd=tunico;";
+        private const string _connectionString = @"Data Source=.\SQLEXPRESS;initial catalog=TUNISBRANDCO_DB;uid=sa;pwd=tunico;";
 
         public void AddProduct(Product newProduct)
         {
@@ -50,6 +50,50 @@ namespace TunisBrandCo.Infra.Data.Features.Products
                     ConvertObjectToSql(product, DoCommand);
                     DoCommand.CommandText = sql;
                     DoCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public List<Product> GetAllProducts()
+        {
+            var productList = new List<Product>();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (var DoCommand = new SqlCommand())
+                {
+                    DoCommand.Connection = connection;
+                    string sql = @"SELECT * FROM PRODUCT";
+                    DoCommand.CommandText = sql;
+                    SqlDataReader reader = DoCommand.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Product wantedProduct = ConvertSqlToObjetc(reader);
+                        productList.Add(wantedProduct);
+                    }
+                }
+            }
+            return productList;
+        }
+
+        public Product GetProductById(int productId)
+        {
+            var product = new Product();
+            using (var conexao = new SqlConnection(_connectionString))
+            {
+                conexao.Open();
+                using (var comando = new SqlCommand())
+                {
+                    comando.Connection = conexao;
+                    string sql = @"SELECT * FROM PRODUCT WHERE ID = @ID";
+                    comando.CommandText = sql;
+                    comando.Parameters.AddWithValue("@ID", productId);
+                    var reader = comando.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        product = ConvertSqlToObjetc(reader);
+                    };
+                    return product;
                 }
             }
         }

@@ -27,9 +27,19 @@ namespace TunisBrandCo.Infra.Data.Features.Products
             //duvida
         }
 
+        public List<Product> GetAllProducts()
+        {
+            return _productDAO.GetAllProducts();
+        }
+
+        public Product GetProductById(int productId)
+        {
+            return _productDAO.GetProductById(productId);
+        }
+
         public void UpdateProduct(Product editedProduct)
         {
-           _productDAO.UpdateProduct(editedProduct);
+            _productDAO.UpdateProduct(editedProduct);
         }
 
         public void UpdateStatus(int productId)
