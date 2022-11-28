@@ -28,15 +28,15 @@ namespace TunisBrandCo.API.Controllers.Features.Products
         }
 
         [HttpPut]
-        public IActionResult UpdateProduct(Product editedProduct)
+        public IActionResult PutProduct(Product editedProduct)
         {
             return Ok(_productService.UpdateProduct(editedProduct));
         }
 
-        //[HttpDelete("{id}")]
-        //public IActionResult DeleteProduct(int id)
-        //{
-        //    return Ok(/*_productService.DeleteClient(cpf)*/);
-        //}
+        [HttpPut("{quantity}")]
+        public IActionResult AddStock(int productId, int quantity)
+        {
+            return Ok(_productService.AddStock(productId, quantity));
+        }
     }
 }

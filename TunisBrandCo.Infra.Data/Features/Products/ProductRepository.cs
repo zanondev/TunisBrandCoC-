@@ -24,7 +24,6 @@ namespace TunisBrandCo.Infra.Data.Features.Products
         public void AddStock(Product product, int quantity)
         {
             _productDAO.AddStock(product, quantity);
-            //duvida
         }
 
         public List<Product> GetAllProducts()

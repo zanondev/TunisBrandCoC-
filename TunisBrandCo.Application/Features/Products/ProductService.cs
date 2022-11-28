@@ -37,16 +37,23 @@ namespace TunisBrandCo.Application.Features.Products
             return newProduct;
         }
 
-        public string DeleteProduct(string cpf)
+        public object AddStock(int productId, int quantity)
         {
-            //var client = _clientRepository.GetClientByCpf(cpf);
+            if(quantity < 1)
+                throw new NotAllowedException($"Quantity: {quantity} can't be less than 1.");
 
-            //if (client.Cpf == null)
-            //    throw new NotFoundException($"Client: {client.Cpf} doesn't exists.");
+            var product = _productRepository.GetProductById(productId);
 
-            //_clientRepository.DeleteClient(client.Id);
+            if (product == null)
+                throw new NotFoundException($"Product: {product.Id} doesn't exists.");
 
-            return "Produto deletado com sucesso!";
+            var lastQuantity = product.StockQuantity;
+
+            var newQuantity = lastQuantity + quantity;
+
+            _productRepository.AddStock(product, newQuantity);
+
+            return "Quantidade em estoque alterada com sucesso!";
         }
 
         public object UpdateProduct(Product editedProduct)

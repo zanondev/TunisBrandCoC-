@@ -126,11 +126,10 @@ namespace TunisBrandCo.Infra.Data.Features.Products
                 {
                     DoCommand.Connection = connection;
                     string sql = @"UPDATE PRODUCT SET            
-                                        STOCK_QUANTITY = @STOCK_QUANTITY,
+                                        STOCK_QUANTITY = @STOCK_QUANTITY
                                         WHERE ID = @ID;";
                     DoCommand.Parameters.AddWithValue("@ID", product.Id);
                     DoCommand.Parameters.AddWithValue("@STOCK_QUANTITY", quantity);
-                    ConvertObjectToSql(product, DoCommand);
                     DoCommand.CommandText = sql;
                     DoCommand.ExecuteNonQuery();
                 }
