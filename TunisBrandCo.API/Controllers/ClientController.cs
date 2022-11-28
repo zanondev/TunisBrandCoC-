@@ -25,7 +25,7 @@ namespace TunisBrandCo.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateClient([FromBody] Client newClient)
+        public IActionResult PostClient([FromBody] Client newClient)
         {
             return Ok(_clientService.AddClient(newClient));
         }
@@ -35,5 +35,12 @@ namespace TunisBrandCo.API.Controllers
         {
             return Ok(_clientService.DeleteClient(cpf));
         }
+
+        [HttpPut]
+        public IActionResult UpdateClient(Client editedClient)
+        {
+            return Ok(_clientService.UpdateClient(editedClient));
+        }
+
     }
 }

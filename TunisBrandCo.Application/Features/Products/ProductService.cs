@@ -49,10 +49,24 @@ namespace TunisBrandCo.Application.Features.Products
             return "Produto deletado com sucesso!";
         }
 
+        public object UpdateProduct(Product editedProduct)
+        {
+            var product = _productRepository.GetProductById(editedProduct.Id);
+
+            if ((product.Id != editedProduct.Id) || editedProduct == null)
+                throw new NotFoundException($"Product: {product.Id} doesn't exists.");
+
+            product.Id = editedProduct.Id;
+            product.ExpiryDate = editedProduct.ExpiryDate;
+            product.Description = editedProduct.Description;
+            product.Price = editedProduct.Price;
+            product.IsActive = editedProduct.IsActive;
+            product.StockQuantity = editedProduct.StockQuantity;
 
 
+            _productRepository.UpdateProduct(product);
 
-
-
+            return "Produto alterado com sucesso!";
+        }
     }
 }

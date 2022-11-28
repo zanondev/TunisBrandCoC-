@@ -44,7 +44,7 @@ namespace TunisBrandCo.Infra.Data.Features.Products
                                         EXPIRYDATE = @EXPIRYDATE,
                                         PRODUCT_DESCRIPTION = @PRODUCT_DESCRIPTION,
                                         STOCK_QUANTITY = @STOCK_QUANTITY,
-                                        ISACTIVE = @ISACTIVE,
+                                        ISACTIVE = @ISACTIVE
                                         WHERE ID = @ID;";
                     DoCommand.Parameters.AddWithValue("@ID", product.Id);
                     ConvertObjectToSql(product, DoCommand);
