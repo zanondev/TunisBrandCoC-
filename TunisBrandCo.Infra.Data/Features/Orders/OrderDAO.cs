@@ -35,7 +35,7 @@ namespace TunisBrandCo.Infra.Data.Features.Orders
                 using (var comando = new SqlCommand())
                 {
                     comando.Connection = conexao;
-                    string sql = @"SELECT * FROM ORDER WHERE ID = @ID";
+                    string sql = @"SELECT * FROM ORDERS WHERE ID = @ID";
                     comando.CommandText = sql;
                     comando.Parameters.AddWithValue("@ID", ordertId);
                     var reader = comando.ExecuteReader();
@@ -56,8 +56,8 @@ namespace TunisBrandCo.Infra.Data.Features.Orders
                 using (var DoCommand = new SqlCommand())
                 {
                     DoCommand.Connection = connection;
-                    string sql = @"DELETE FROM ORDER WHERE ID = @ID;";
-                    DoCommand.Parameters.AddWithValue("@CPF", orderId);
+                    string sql = @"DELETE FROM ORDERS WHERE ID = @ID;";
+                    DoCommand.Parameters.AddWithValue("@ID", orderId);
                     DoCommand.CommandText = sql;
                     DoCommand.ExecuteNonQuery();
                 }
@@ -73,7 +73,7 @@ namespace TunisBrandCo.Infra.Data.Features.Orders
                 using (var comando = new SqlCommand())
                 {
                     comando.Connection = conexao;
-                    string sql = @"SELECT STATUS FROM ORDER WHERE ID = @ID";
+                    string sql = @"SELECT STATUS FROM ORDERS WHERE ID = @ID";
                     comando.CommandText = sql;
                     comando.Parameters.AddWithValue("@ID", Orderid);
                     var reader = comando.ExecuteReader();

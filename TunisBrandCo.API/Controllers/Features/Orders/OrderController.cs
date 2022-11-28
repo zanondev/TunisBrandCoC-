@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TunisBrandCo.Application.Features.Client;
 using TunisBrandCo.Application.Features.Order;
 using TunisBrandCo.Application.Features.Products;
 using TunisBrandCo.Domain.Features.Clients;
@@ -31,6 +32,12 @@ namespace TunisBrandCo.API.Controllers.Features.Orders
         public IActionResult PostOrder([FromBody] Order newOrder)
         {
             return Ok(_orderService.AddOrder(newOrder));
+        }
+
+        [HttpDelete]
+        public IActionResult DeleteOrder(int orderId)
+        {
+            return Ok(_orderService.DeleteOrder(orderId));
         }
     }
 }

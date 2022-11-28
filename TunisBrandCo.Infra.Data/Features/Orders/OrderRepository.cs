@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TunisBrandCo.Domain.Features.Clients;
 using TunisBrandCo.Domain.Features.Orders;
 using TunisBrandCo.Infra.Data.Features.Clients;
 
@@ -40,5 +41,11 @@ namespace TunisBrandCo.Infra.Data.Features.Orders
         {
             throw new NotImplementedException();
         }
+
+        public Order GetOrderById(int orderId)
+        {
+            return _orderDAO.GetOrderById(orderId);
+        }
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TunisBrandCo.Domain.Features.Clients;
 using TunisBrandCo.Domain.Features.Products;
 
 namespace TunisBrandCo.Domain.Features.Orders
@@ -14,5 +15,6 @@ namespace TunisBrandCo.Domain.Features.Orders
         List<Order> GetAllOrders();
         void GetStatus(Order Order);
         void UpdateStatus(int status);
+        Order GetOrderById(int orderId);
     }
 }

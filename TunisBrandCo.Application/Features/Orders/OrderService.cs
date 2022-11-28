@@ -74,5 +74,17 @@ namespace TunisBrandCo.Application.Features.Order
 
             return newOrder;
         }
+
+        public string DeleteOrder(int orderId)
+        {
+            var order = _orderRepository.GetOrderById(orderId);
+
+            if (order == null)
+                throw new NotFoundException($"Order: {order.Id} doesn't exists.");
+
+            _orderRepository.DeleteOrder(order.Id);
+
+            return "Pedido deletado com sucesso!";
+        }
     }
 }
