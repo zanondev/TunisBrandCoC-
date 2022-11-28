@@ -10,6 +10,9 @@ using TunisBrandCo.Domain.Features.Clients;
 using TunisBrandCo.Domain.Features.Products;
 using TunisBrandCo.Application.Features.Products;
 using TunisBrandCo.Application.Features.Client;
+using TunisBrandCo.Infra.Data.Features.Products;
+using TunisBrandCo.Infra.Data.Features.Orders;
+using TunisBrandCo.Infra.Data.Features.Clients;
 
 namespace TunisBrandCo.Application.Features.Order
 {
@@ -20,13 +23,12 @@ namespace TunisBrandCo.Application.Features.Order
         private readonly IProductRepository _productRepository;
         private readonly IClientRepository _clientRepository;
 
-
-        public OrderService(IOrderRepository orderRepository, ProductService productService, IClientRepository clientRepository, IProductRepository productRepository)
+        public OrderService(IProductRepository productRepository, IClientRepository clientRepository, ProductService productService, IOrderRepository orderRepository)
         {
-            _orderRepository = orderRepository;
-            _productService = productService;
-            _clientRepository = clientRepository;
-            _productRepository = productRepository;
+            _productRepository = new ProductRepository();
+            _clientRepository = new ClientRepository();
+            _productService = new ProductService(_productRepository);
+            _orderRepository = new OrderRepository();
         }
 
         public object AddOrder(Domain.Features.Orders.Order newOrder)
@@ -58,7 +60,7 @@ namespace TunisBrandCo.Application.Features.Order
             var client = _clientRepository.GetClientById(newOrder.Client.Id);
 
             if (client == null)
-                throw new NotFoundException($"Client Id: {product.Id} doesn't exists.");
+                throw new NotFoundException($"Client Id: {client.Id} doesn't exists.");
 
             var totalPrice = newOrder.Product.Price * newOrder.ProductQuantity;
 

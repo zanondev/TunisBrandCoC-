@@ -4,6 +4,7 @@ using TunisBrandCo.Application.Features.Products;
 using TunisBrandCo.Domain.Features.Clients;
 using TunisBrandCo.Domain.Features.Orders;
 using TunisBrandCo.Domain.Features.Products;
+using TunisBrandCo.Infra.Data.Features.Clients;
 using TunisBrandCo.Infra.Data.Features.Orders;
 using TunisBrandCo.Infra.Data.Features.Products;
 
@@ -23,7 +24,7 @@ namespace TunisBrandCo.API.Controllers.Features.Orders
         public OrderController()
         {
             _orderRepository = new OrderRepository();
-            _orderService = new OrderService(_orderRepository, _productService, _clientRepository, _productRepository);
+            _orderService = new OrderService(_productRepository, _clientRepository, _productService, _orderRepository);
         }
 
         [HttpPost]
