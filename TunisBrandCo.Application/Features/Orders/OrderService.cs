@@ -4,20 +4,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TunisBrandCo.Domain.Features.Products;
+using TunisBrandCo.Domain.Exceptions;
+using TunisBrandCo.Domain.Features.Orders;
 
 namespace TunisBrandCo.Application.Features.Order
 {
     public class OrderService
     {
-        private readonly IProductRepository _productRepository;
-        private readonly ILogger _logger;
+        private readonly IOrderRepository _orderRepository;
 
-        public OrderService(IProductRepository productRepository, ILogger logger)
+        public OrderService(IOrderRepository orderRepository)
         {
-            _productRepository = productRepository;
-            _logger = logger;
+            _orderRepository = orderRepository;
         }
 
+        //public object AddOrder(Domain.Features.Orders.Order newOrder)
+        //{
+        //    if (newOrder == null)
+        //        throw new NotFoundException($"Product Id: {newOrder.Id} doesn't exists.");
+
+        //    var orderList = _orderRepository.GetAllProducts();
+
+        //    foreach (var product in orderList)
+        //    {
+        //        if (product.Id == newOrder.Id)
+        //            throw new AlreadyExistsException($"Product Id: {newProduct.Id} already exists.");
+        //    }
+
+        //    _productRepository.AddProduct(newProduct);
+
+        //    return newProduct;
+        //}
     }
 }
