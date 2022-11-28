@@ -21,9 +21,9 @@ namespace TunisBrandCo.Infra.Data.Features.Products
             _productDAO.AddProduct(newProduct);
         }
 
-        public void AddStock(Product product, int quantity)
+        public void StockManagement(Product product, int quantity)
         {
-            _productDAO.AddStock(product, quantity);
+            _productDAO.StockManagement(product, quantity);
         }
 
         public List<Product> GetAllProducts()
@@ -41,9 +41,10 @@ namespace TunisBrandCo.Infra.Data.Features.Products
             _productDAO.UpdateProduct(editedProduct);
         }
 
-        public void UpdateStatus(int productId)
+        public void UpdateStatus(Product product, bool isActive)
         {
-            throw new NotImplementedException();
+            _productDAO.UpdateStatus(product, isActive);
         }
+
     }
 }

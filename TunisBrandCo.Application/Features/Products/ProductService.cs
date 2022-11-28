@@ -51,10 +51,33 @@ namespace TunisBrandCo.Application.Features.Products
 
             var newQuantity = lastQuantity + quantity;
 
-            _productRepository.AddStock(product, newQuantity);
+            _productRepository.StockManagement(product, newQuantity);
 
             return "Quantidade em estoque alterada com sucesso!";
         }
+
+
+        public object RemoveStock(int productId, int quantity)
+        {
+            if (quantity < 1)
+                throw new NotAllowedException($"Quantity: {quantity} can't be less than 1.");
+
+            var product = _productRepository.GetProductById(productId);
+
+            if (product == null)
+                throw new NotFoundException($"Product: {product.Id} doesn't exists.");
+
+            var lastQuantity = product.StockQuantity;
+
+            var newQuantity = lastQuantity - quantity;
+
+            _productRepository.StockManagement(product, newQuantity);
+
+            return "Quantidade em estoque alterada com sucesso!";
+        }
+
+
+
 
         public object UpdateProduct(Product editedProduct)
         {
@@ -74,6 +97,20 @@ namespace TunisBrandCo.Application.Features.Products
             _productRepository.UpdateProduct(product);
 
             return "Produto alterado com sucesso!";
+        }
+
+        public object UpdateStatus(Product editedProduct)
+        {
+            var product = _productRepository.GetProductById(editedProduct.Id);
+
+            if ((product.Id != editedProduct.Id) || editedProduct == null)
+                throw new NotFoundException($"Product: {product.Id} doesn't exists.");
+
+            bool newStatus = !product.IsActive;
+
+            _productRepository.UpdateStatus(product, newStatus);
+
+            return "Status do produto alterado com sucesso!";
         }
     }
 }

@@ -98,26 +98,26 @@ namespace TunisBrandCo.Infra.Data.Features.Products
             }
         }
 
-        //public void UpdateStatus(Product product)
-        //{
-        //    using (var connection = new SqlConnection(_connectionString))
-        //    {
-        //        connection.Open();
-        //        using (var DoCommand = new SqlCommand())
-        //        {
-        //            DoCommand.Connection = connection;
-        //            string sql = @"UPDATE PRODUCT SET            
-        //                                ??
-        //                                WHERE ID = @ID;";
-        //            DoCommand.Parameters.AddWithValue("@ID", product.Id);
-        //            ConvertObjectToSql(product, DoCommand);
-        //            DoCommand.CommandText = sql;
-        //            DoCommand.ExecuteNonQuery();
-        //        }
-        //    }
-        //}
+        public void UpdateStatus(Product product, bool isActive)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (var DoCommand = new SqlCommand())
+                {
+                    DoCommand.Connection = connection;
+                    string sql = @"UPDATE PRODUCT SET            
+                                        ISACTIVE = @ISACTIVE
+                                        WHERE ID = @ID;";
+                    DoCommand.Parameters.AddWithValue("@ID", product.Id);
+                    DoCommand.Parameters.AddWithValue("@ISACTIVE", isActive);
+                    DoCommand.CommandText = sql;
+                    DoCommand.ExecuteNonQuery();
+                }
+            }
+        }
 
-        public void AddStock(Product product, int quantity)
+        public void StockManagement(Product product, int quantity)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -135,6 +135,8 @@ namespace TunisBrandCo.Infra.Data.Features.Products
                 }
             }
         }
+
+
 
         private Product ConvertSqlToObjetc(SqlDataReader reader)
         {
