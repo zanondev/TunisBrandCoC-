@@ -25,7 +25,7 @@ namespace TunisBrandCo.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult PostClient([FromBody] Client newClient)
+        public IActionResult UpdateClient([FromBody] Client newClient)
         {
             return Ok(_clientService.AddClient(newClient));
         }

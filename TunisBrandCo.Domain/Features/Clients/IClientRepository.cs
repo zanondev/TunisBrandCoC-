@@ -14,5 +14,6 @@ namespace TunisBrandCo.Domain.Features.Clients
         void DeleteClient(int clientId);
         public List<Client> GetAllClients();
         public Client GetClientByCpf(string cpf);
+        Client GetClientById(int clientId);
     }
 }

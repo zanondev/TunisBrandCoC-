@@ -36,5 +36,10 @@ namespace TunisBrandCo.Infra.Data.Features.Clients
         {
             return _clientDAO.GetClientByCpf(cpf);
         }
+
+        public Client GetClientById(int clientId)
+        {
+            return _clientDAO.GetClientById(clientId);
+        }
     }
 }

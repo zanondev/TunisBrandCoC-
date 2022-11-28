@@ -120,8 +120,7 @@ namespace TunisBrandCo.Infra.Data.Features.Clients
                     string sql = @"UPDATE CLIENT SET            
                                         CPF = @CPF,
                                         CLIENT_NAME = @CLIENT_NAME,
-                                        BIRTHDATE = @BIRTHDATE,
-                                        LOYALTY_POINTS = @LOYALTY_POINTS,
+                                        BIRTHDATE = @BIRTHDATE
                                         WHERE ID = @ID;";
                     DoCommand.Parameters.AddWithValue("@ID", client.Id);
                     ConvertObjectToSql(client, DoCommand);

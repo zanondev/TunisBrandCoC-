@@ -51,9 +51,10 @@ namespace TunisBrandCo.Application.Features.Client
             return "Cliente deletado com sucesso!";
         }
 
+
         public string UpdateClient(Domain.Features.Clients.Client editedClient)
         {
-            var client = _clientRepository.GetClientByCpf(editedClient.Cpf);
+            var client = _clientRepository.GetClientById(editedClient.Id);
 
             if ((client.Id != editedClient.Id) || editedClient == null)
                 throw new NotFoundException($"Client: {client.Cpf} doesn't exists.");

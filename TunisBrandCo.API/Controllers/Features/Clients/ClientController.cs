@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Runtime.ConstrainedExecution;
+using TunisBrandCo.Application.Features.Client;
 using TunisBrandCo.Domain.Features.Clients;
 using TunisBrandCo.Infra.Data.Features.Clients;
-using TunisBrandCo.Application.Features.Client;
-using Microsoft.Extensions.Logging;
 
 namespace TunisBrandCo.API.Controllers.Features.Clients
 {
@@ -33,5 +30,12 @@ namespace TunisBrandCo.API.Controllers.Features.Clients
         {
             return Ok(_clientService.DeleteClient(cpf));
         }
+
+        [HttpPut]
+        public IActionResult PutClient(Client editedClient)
+        {
+            return Ok(_clientService.UpdateClient(editedClient));
+        }
+
     }
 }
