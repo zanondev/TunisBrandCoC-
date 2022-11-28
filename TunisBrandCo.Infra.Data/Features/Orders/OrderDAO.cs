@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using TunisBrandCo.Domain.Features.Clients;
 using TunisBrandCo.Domain.Features.Orders;
 
 namespace TunisBrandCo.Infra.Data.Features.Orders
 {
     public class OrderDAO
     {
-        private const string _connectionString = @"Data Source=.\SQLEXPRESS;initial catalog=SERRALINHASAEREASDB;uid=sa;pwd=tunico;";
+        private const string _connectionString = @"Data Source=.\SQLEXPRESS;initial catalog=TUNISBRANDCO_DB;uid=sa;pwd=tunico;";
 
         public void AddOrder(Order newOrder)
         {
@@ -16,7 +18,7 @@ namespace TunisBrandCo.Infra.Data.Features.Orders
                 using (var DoCommand = new SqlCommand())
                 {
                     DoCommand.Connection = connection;
-                    string sql = @"INSERT ORDER VALUES (@PRODUCT_ID, @CLIENT_ID, @PRODUCT_QUANTITY, @TOTAL_PRICE, @ORDER_DATE, @STATUS);";
+                    string sql = @"INSERT ORDERS VALUES (@PRODUCT_ID, @CLIENT_ID, @PRODUCT_QUANTITY, @TOTAL_PRICE, @ORDER_DATE, @STATUS);";
                     ConvertObjectToSql(newOrder, DoCommand);
                     DoCommand.CommandText = sql;
                     DoCommand.ExecuteNonQuery();
@@ -84,6 +86,28 @@ namespace TunisBrandCo.Infra.Data.Features.Orders
             }
         }
 
+        public List<Order> GetAllOrders()
+        {
+            var orderList = new List<Order>();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (var DoCommand = new SqlCommand())
+                {
+                    DoCommand.Connection = connection;
+                    string sql = @"SELECT * FROM ORDERS";
+                    DoCommand.CommandText = sql;
+                    SqlDataReader reader = DoCommand.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Order wanterOrder = ConvertSqlToObjetc(reader);
+                        orderList.Add(wanterOrder);
+                    }
+                }
+            }
+            return orderList;
+        }
+
         //public void UpdateStatus(Order order)
         //{
         //    using (var connection = new SqlConnection(_connectionString))
@@ -136,5 +160,6 @@ namespace TunisBrandCo.Infra.Data.Features.Orders
             doCommand.Parameters.AddWithValue("@STATUS", order.Status);
         }
 
+        
     }
 }

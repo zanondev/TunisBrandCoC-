@@ -26,6 +26,11 @@ namespace TunisBrandCo.Infra.Data.Features.Orders
             _orderDAO.DeleteOrder(orderId);
         }
 
+        public List<Order> GetAllOrders()
+        {
+            return _orderDAO.GetAllOrders();
+        }
+
         public void GetStatus(Order Order)
         {
             _orderDAO.GetStatusById(Order.Id);

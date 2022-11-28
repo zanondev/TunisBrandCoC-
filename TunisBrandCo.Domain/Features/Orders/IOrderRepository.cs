@@ -11,6 +11,7 @@ namespace TunisBrandCo.Domain.Features.Orders
     {
         void AddOrder(Order newOrder);
         void DeleteOrder(int OrderId);
+        List<Order> GetAllOrders();
         void GetStatus(Order Order);
         void UpdateStatus(int status);
     }
