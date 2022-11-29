@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TunisBrandCo.Domain.Features.Products;
 using TunisBrandCo.Infra.Data.Features.Products;
 using TunisBrandCo.Domain.Exceptions;
+using System.Net;
 
 namespace TunisBrandCo.Application.Features.Products
 {
@@ -15,7 +16,7 @@ namespace TunisBrandCo.Application.Features.Products
 
         public ProductService(IProductRepository productRepository)
         {
-            _productRepository = new ProductRepository();
+            _productRepository = productRepository;
         }
 
 
@@ -32,6 +33,15 @@ namespace TunisBrandCo.Application.Features.Products
                     throw new AlreadyExistsException($"Product Id: {newProduct.Id} already exists.");
             }
 
+            if (newProduct.Description.Length < 3)
+                throw new NotAllowedException($"Invalid Description. Must have at least 3 characters.");
+
+            if (newProduct.Price <= 0)
+                throw new NotAllowedException($"Invalid Price. Must be more than 0.");
+
+            if (newProduct.ExpiryDate > DateTime.Now)
+                throw new NotAllowedException($"Invalid expiry date.");
+
             _productRepository.AddProduct(newProduct);
 
             return newProduct;
@@ -44,7 +54,7 @@ namespace TunisBrandCo.Application.Features.Products
 
             var product = _productRepository.GetProductById(productId);
 
-            if (product == null)
+            if (product.Id != productId)
                 throw new NotFoundException($"Product: {product.Id} doesn't exists.");
 
             var lastQuantity = product.StockQuantity;
@@ -64,7 +74,7 @@ namespace TunisBrandCo.Application.Features.Products
 
             var product = _productRepository.GetProductById(productId);
 
-            if (product == null)
+            if (product.Id != productId)
                 throw new NotFoundException($"Product: {product.Id} doesn't exists.");
 
             var lastQuantity = product.StockQuantity;
