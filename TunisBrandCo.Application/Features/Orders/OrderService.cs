@@ -51,8 +51,8 @@ namespace TunisBrandCo.Application.Features.Order
 
             newOrder.Product = product;
 
-            if (newOrder.ProductQuantity >= newOrder.Product.StockQuantity)
-                throw new NotAllowedException($"Product quantity must be less than stock.");
+            if (newOrder.ProductQuantity > newOrder.Product.StockQuantity)
+                throw new NotAllowedException($"Product quantity must be less or equal than stock.");
 
             if (newOrder.ProductQuantity < 1)
                 throw new NotAllowedException($"Product quantity must be more than one.");

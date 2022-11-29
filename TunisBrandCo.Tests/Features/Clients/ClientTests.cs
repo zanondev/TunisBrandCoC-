@@ -159,7 +159,7 @@ namespace TunisBrandCo.Tests.Features.Clients
             var _clientRepository = new Mock<IClientRepository>();
 
             var client = new Client()
-            {
+            {   
                 Id = 1,
                 BirthDate = System.DateTime.Now.AddDays(-1),
                 LoyaltyPoints = 0,
@@ -240,6 +240,7 @@ namespace TunisBrandCo.Tests.Features.Clients
 
             var clientList = new List<Client>();
             clientList.Add(oldClient);
+
             _clientRepository.Setup(x => x.GetAllClients()).Returns(clientList);
 
             _clientRepository.Setup(x => x.AddClient(newClient));
