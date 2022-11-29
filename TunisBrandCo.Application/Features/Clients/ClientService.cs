@@ -39,7 +39,10 @@ namespace TunisBrandCo.Application.Features.Client
                 throw new NotAllowedException($"Invalid birth date.");
 
             if (newClient.Cpf.Length > 11)
-                throw new NotAllowedException($"Invalid CPF.");
+                throw new NotAllowedException($"Invalid CPF. Must have less than 11 characters.");
+
+            if (newClient.Name.Length < 3)
+                throw new NotAllowedException($"Invalid Name. Must have at least 3 characters.");
 
             _clientRepository.AddClient(newClient);
 

@@ -71,6 +71,32 @@ namespace TunisBrandCo.Tests.Features.Clients
             Assert.That(() => _clientService.AddClient(client), Throws.Exception);
         }
 
+        [Test]
+        public void When_ValidateClient_And_NameHaveLessThan3Characters_Then_MustBeInvalid()
+        {
+            //arrange
+            var _clientRepository = new Mock<IClientRepository>();
+
+            var client = new Client()
+            {
+                Id = 1,
+                BirthDate = System.DateTime.Now.AddDays(-1),
+                LoyaltyPoints = 0,
+                Cpf = "00000000000",
+                Name = "Lu"
+            };
+
+            var clientList = new List<Client>();
+            _clientRepository.Setup(x => x.GetAllClients()).Returns(clientList);
+
+            _clientRepository.Setup(x => x.AddClient(client));
+
+            var _clientService = new ClientService(_clientRepository.Object);
+
+            //action
+            //assert
+            Assert.That(() => _clientService.AddClient(client), Throws.Exception);
+        }
 
         [Test]
         public void When_ValidateClient_And_BirthDateIsLessThanCurrentDate_Then_MustBeInvalid()
@@ -188,7 +214,42 @@ namespace TunisBrandCo.Tests.Features.Clients
             Assert.That(() => _clientService.DeleteClient(client.Cpf), Throws.Nothing);
         }
 
+        [Test]
+        public void When_AddClient_And_CpfAlreadyExist_Then_MustBeInvalid()
+        {
+            //arrange
+            var _clientRepository = new Mock<IClientRepository>();
 
+            var newClient = new Client()
+            {
+                Id = 1,
+                BirthDate = System.DateTime.Now.AddDays(-1),
+                LoyaltyPoints = 0,
+                Cpf = "00000000000",
+                Name = "Lucas"
+            };
+
+            var oldClient = new Client()
+            {
+                Id = 2,
+                BirthDate = System.DateTime.Now.AddDays(-1),
+                LoyaltyPoints = 0,
+                Cpf = "00000000000",
+                Name = "Goku"
+            };
+
+            var clientList = new List<Client>();
+            clientList.Add(oldClient);
+            _clientRepository.Setup(x => x.GetAllClients()).Returns(clientList);
+
+            _clientRepository.Setup(x => x.AddClient(newClient));
+
+            var _clientService = new ClientService(_clientRepository.Object);
+
+            //action
+            //assert
+            Assert.That(() => _clientService.AddClient(newClient), Throws.Exception);
+        }
 
     }
 }
