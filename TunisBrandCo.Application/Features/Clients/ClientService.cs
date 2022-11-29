@@ -34,6 +34,9 @@ namespace TunisBrandCo.Application.Features.Client
                     throw new AlreadyExistsException($"Client CPF: {newClient.Cpf} already exists.");
             }
 
+            if (newClient.BirthDate > DateTime.Now)
+                throw new NotAllowedException($"Invalid birth date.");
+
             _clientRepository.AddClient(newClient);
 
             return newClient;

@@ -15,18 +15,27 @@ namespace TunisBrandCo.Domain.Features.Clients
         public DateTime BirthDate { get; set; }
         public Decimal LoyaltyPoints { get; set; }
 
-        //public Client(int id, string name, string cpf, DateTime birthDate)
-        //{
-        //    Id = id;
-        //    Name = name;
-        //    Cpf = cpf;
-        //    BirthDate = birthDate;
-        //    LoyaltyPoints = 0;
-        //}
-
         public Client()
         {
          
+        }
+
+        public bool Validate()
+        {
+            if(string.IsNullOrEmpty(this.Name))
+            {
+                return false;
+            }
+            if (this.BirthDate > DateTime.Now)
+            {
+                return false;
+            }
+            if (this.Cpf.Length > 11)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }
