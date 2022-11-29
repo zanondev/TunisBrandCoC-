@@ -19,23 +19,5 @@ namespace TunisBrandCo.Domain.Features.Clients
         {
          
         }
-
-        public bool Validate()
-        {
-            if(string.IsNullOrEmpty(this.Name))
-            {
-                return false;
-            }
-            if (this.BirthDate > DateTime.Now)
-            {
-                return false;
-            }
-            if (this.Cpf.Length > 11)
-            {
-                return false;
-            }
-
-            return true;
-        }
     }
 }

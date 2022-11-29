@@ -10,6 +10,7 @@ using TunisBrandCo.Domain.Exceptions;
 using TunisBrandCo.Infra.Data.Features.Clients;
 using Azure;
 using System.Net;
+using Microsoft.IdentityModel.Tokens;
 
 namespace TunisBrandCo.Application.Features.Client
 {
@@ -19,13 +20,13 @@ namespace TunisBrandCo.Application.Features.Client
 
         public ClientService(IClientRepository clientRepository)
         {
-            _clientRepository = new ClientRepository();
+            _clientRepository = clientRepository;
         }
 
         public Domain.Features.Clients.Client AddClient(Domain.Features.Clients.Client newClient)
         {
-            if (newClient == null)
-                throw new NotFoundException($"Client: {newClient.Cpf} doesn't exists.");
+            if (newClient.Cpf.IsNullOrEmpty() || newClient.Name.IsNullOrEmpty())
+                throw new NotFoundException($"Client is null or empty.");
 
             var clientList = _clientRepository.GetAllClients();
             foreach (var client in clientList)
@@ -36,6 +37,9 @@ namespace TunisBrandCo.Application.Features.Client
 
             if (newClient.BirthDate > DateTime.Now)
                 throw new NotAllowedException($"Invalid birth date.");
+
+            if (newClient.Cpf.Length > 11)
+                throw new NotAllowedException($"Invalid CPF.");
 
             _clientRepository.AddClient(newClient);
 
