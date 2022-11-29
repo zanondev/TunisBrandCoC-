@@ -25,10 +25,10 @@ namespace TunisBrandCo.Application.Features.Order
 
         public OrderService(IProductRepository productRepository, IClientRepository clientRepository, ProductService productService, IOrderRepository orderRepository)
         {
-            _productRepository = new ProductRepository();
-            _clientRepository = new ClientRepository();
-            _productService = new ProductService(_productRepository);
-            _orderRepository = new OrderRepository();
+            _productRepository = productRepository;
+            _clientRepository = clientRepository;
+            _productService = productService;
+            _orderRepository = orderRepository;
         }
 
         public object AddOrder(Domain.Features.Orders.Order newOrder)
