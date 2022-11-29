@@ -82,7 +82,7 @@ namespace TunisBrandCo.Application.Features.Order
         {
             var order = _orderRepository.GetOrderById(orderId);
 
-            if (order == null)
+            if (order.Id != orderId)
                 throw new NotFoundException($"Order: {order.Id} doesn't exists.");
 
             _orderRepository.DeleteOrder(order.Id);
@@ -95,7 +95,7 @@ namespace TunisBrandCo.Application.Features.Order
             
             var order = _orderRepository.GetOrderById(orderId);
 
-            if (order == null)
+            if (order.Id != orderId)
                 throw new NotFoundException($"Order : {order.Id} doesn't exists.");
             
             _orderRepository.UpdateStatus(orderId, status);
