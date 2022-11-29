@@ -32,14 +32,14 @@ namespace TunisBrandCo.Infra.Data.Features.Orders
             return _orderDAO.GetAllOrders();
         }
 
-        public void GetStatus(Order Order)
+        public Order GetStatus(int Id)
         {
-            _orderDAO.GetStatusById(Order.Id);
+            return _orderDAO.GetStatusById(Id);
         }
 
-        public void UpdateStatus(int status)
+        public void UpdateStatus(int orderId, int status)
         {
-            throw new NotImplementedException();
+           _orderDAO.UpdateStatus(orderId, status);
         }
 
         public Order GetOrderById(int orderId)

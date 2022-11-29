@@ -42,7 +42,6 @@ namespace TunisBrandCo.Domain.Features.Orders
 
         public Order()
         {
-
         }
     }
 }

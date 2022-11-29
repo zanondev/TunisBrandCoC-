@@ -62,7 +62,10 @@ namespace TunisBrandCo.Application.Features.Order
             if (client == null)
                 throw new NotFoundException($"Client Id: {client.Id} doesn't exists.");
 
-            var totalPrice = newOrder.Product.Price * newOrder.ProductQuantity;
+            var totalPrice = product.Price * newOrder.ProductQuantity;
+
+            var newLoyaltyPoint = client.LoyaltyPoints + (newOrder.TotalPrice * 2);
+            client.LoyaltyPoints = newLoyaltyPoint;
 
             newOrder.Client = client;
             
@@ -85,6 +88,29 @@ namespace TunisBrandCo.Application.Features.Order
             _orderRepository.DeleteOrder(order.Id);
 
             return "Pedido deletado com sucesso!";
+        }
+
+        public object updateStatus(int orderId, int status)
+        {
+            
+            var order = _orderRepository.GetOrderById(orderId);
+
+            if (order == null)
+                throw new NotFoundException($"Order : {order.Id} doesn't exists.");
+            
+            _orderRepository.UpdateStatus(orderId, status);
+
+            return "Status do pedido alterado com sucesso!";
+        }
+
+        public object GetStatus(int orderId)
+        {
+            var order = _orderRepository.GetOrderById(orderId);
+
+            if (order.Id != orderId)
+                throw new NotFoundException($"Order : {order.Id} doesn't exists.");
+
+            return order.Status;
         }
     }
 }

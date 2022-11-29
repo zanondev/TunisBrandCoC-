@@ -39,5 +39,17 @@ namespace TunisBrandCo.API.Controllers.Features.Orders
         {
             return Ok(_orderService.DeleteOrder(orderId));
         }
+
+        [HttpPatch]
+        public IActionResult UpdateStatus(int orderId, int status)
+        {
+            return Ok(_orderService.updateStatus(orderId, status));
+        }
+
+        [HttpGet]
+        public IActionResult GetStatus(int orderId)
+        {
+            return Ok(_orderService.GetStatus(orderId));
+        }
     }
 }

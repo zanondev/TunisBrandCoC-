@@ -13,8 +13,8 @@ namespace TunisBrandCo.Domain.Features.Orders
         void AddOrder(Order newOrder);
         void DeleteOrder(int OrderId);
         List<Order> GetAllOrders();
-        void GetStatus(Order Order);
-        void UpdateStatus(int status);
+        Order GetStatus(int Id);
+        void UpdateStatus(int orderId, int status);
         Order GetOrderById(int orderId);
     }
 }
