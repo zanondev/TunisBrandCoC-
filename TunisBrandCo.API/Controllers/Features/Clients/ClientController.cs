@@ -1,18 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TunisBrandCo.Application.Features.Client;
+using TunisBrandCo.Application.Features.Order;
 using TunisBrandCo.Domain.Features.Clients;
 using TunisBrandCo.Infra.Data.Features.Clients;
 
 namespace TunisBrandCo.API.Controllers.Features.Clients
 {
     [ApiController]
-    [Route("api/clients")]
+    [Route("api/Client")]
 
     public class ClientController : Controller
     {
         private readonly IClientRepository _clientRepository;
         private readonly ClientService _clientService;
-
+        
         public ClientController()
         {
             _clientRepository = new ClientRepository();
@@ -35,6 +36,12 @@ namespace TunisBrandCo.API.Controllers.Features.Clients
         public IActionResult PutClient(Client editedClient)
         {
             return Ok(_clientService.UpdateClient(editedClient));
+        }
+
+        [HttpGet]
+        public IActionResult GetClient()
+        {
+            return Ok(_clientRepository.GetAllClients());
         }
 
     }

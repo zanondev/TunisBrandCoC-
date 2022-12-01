@@ -21,3 +21,10 @@ C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Infra.Data\obj\Debug\net5.
 C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Infra.Data\bin\Debug\net5.0\TunisBrandCo.Domain.dll
 C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Infra.Data\bin\Debug\net5.0\TunisBrandCo.Domain.pdb
 C:\Users\lucas.zanon\source\repos\TunisBrandCoC-\TunisBrandCo.Infra.Data\obj\Debug\net5.0\TunisBrandCo.Infra.Data.csproj.CopyComplete
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Infra.Data\bin\Debug\net5.0\TunisBrandCo.Infra.Data.deps.json
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Infra.Data\bin\Debug\net5.0\TunisBrandCo.Infra.Data.dll
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Infra.Data\bin\Debug\net5.0\TunisBrandCo.Infra.Data.pdb
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Infra.Data\bin\Debug\net5.0\TunisBrandCo.Domain.dll
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Infra.Data\bin\Debug\net5.0\TunisBrandCo.Domain.pdb
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Infra.Data\obj\Debug\net5.0\TunisBrandCo.Infra.Data.csproj.CopyComplete
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Infra.Data\obj\Debug\net5.0\ref\TunisBrandCo.Infra.Data.dll

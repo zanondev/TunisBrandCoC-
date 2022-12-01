@@ -57,6 +57,9 @@ namespace TunisBrandCo.Application.Features.Products
             if (product.Id != productId)
                 throw new NotFoundException($"Product: {product.Id} doesn't exists.");
 
+            if (quantity > product.StockQuantity)
+                throw new NotAllowedException($"Product quantity must be less or equal than stock.");
+
             var lastQuantity = product.StockQuantity;
 
             var newQuantity = lastQuantity + quantity;

@@ -18,3 +18,7 @@ C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Domain\obj\Debug\net5.0\Tu
 C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Domain\obj\Debug\net5.0\TunisBrandCo.Domain.dll
 C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Domain\obj\Debug\net5.0\refint\TunisBrandCo.Domain.dll
 C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Domain\obj\Debug\net5.0\TunisBrandCo.Domain.pdb
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Domain\bin\Debug\net5.0\TunisBrandCo.Domain.deps.json
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Domain\bin\Debug\net5.0\TunisBrandCo.Domain.dll
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Domain\bin\Debug\net5.0\TunisBrandCo.Domain.pdb
+C:\Users\lucas\source\repos\TunisBrandCo\TunisBrandCo.Domain\obj\Debug\net5.0\ref\TunisBrandCo.Domain.dll
