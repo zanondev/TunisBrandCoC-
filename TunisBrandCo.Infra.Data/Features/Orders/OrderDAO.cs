@@ -17,7 +17,7 @@ namespace TunisBrandCo.Infra.Data.Features.Orders
                 using (var DoCommand = new SqlCommand())
                 {
                     DoCommand.Connection = connection;
-                    string sql = @"INSERT INTO ORDERS (PRODUCT_ID, CLIENT_ID, PRODUCT_QUANTITY, TOTAL_PRICE, ORDER_DATE) VALUES (@PRODUCT_ID, @CLIENT_ID, @PRODUCT_QUANTITY, @TOTAL_PRICE, @ORDER_DATE);";
+                    string sql = @"INSERT INTO ORDERS (PRODUCT_ID, CLIENT_ID, CLIENT_NAME, PRODUCT_QUANTITY, TOTAL_PRICE, ORDER_DATE) VALUES (@PRODUCT_ID, @CLIENT_ID, @CLIENT_NAME, @PRODUCT_QUANTITY, @TOTAL_PRICE, @ORDER_DATE);";
                     ConvertObjectToSql(newOrder, DoCommand);
                     DoCommand.CommandText = sql;
                     DoCommand.ExecuteNonQuery();
@@ -132,11 +132,11 @@ namespace TunisBrandCo.Infra.Data.Features.Orders
                 Order order = new Order();
 
                 order.Id = Convert.ToInt32(reader["ID"].ToString());
+                order.ClientName = reader["CLIENT_NAME"].ToString();
                 order.ProductQuantity = Convert.ToInt32(reader["PRODUCT_QUANTITY"].ToString());
                 order.TotalPrice = Convert.ToDecimal(reader["TOTAL_PRICE"].ToString());
                 order.OrderDate = Convert.ToDateTime(reader["ORDER_DATE"].ToString());
                 order.Status = Convert.ToInt32(reader["ORDER_STATUS"].ToString());
-
                 return order;
             }
 
@@ -144,6 +144,7 @@ namespace TunisBrandCo.Infra.Data.Features.Orders
             {
                 doCommand.Parameters.AddWithValue("@PRODUCT_ID", order.Product.Id);
                 doCommand.Parameters.AddWithValue("@CLIENT_ID", order.Client.Id);
+                 doCommand.Parameters.AddWithValue("@CLIENT_NAME", order.ClientName);
                 doCommand.Parameters.AddWithValue("@PRODUCT_QUANTITY", order.ProductQuantity);
                 doCommand.Parameters.AddWithValue("@TOTAL_PRICE", order.TotalPrice);
                 doCommand.Parameters.AddWithValue("@ORDER_DATE", order.OrderDate);
