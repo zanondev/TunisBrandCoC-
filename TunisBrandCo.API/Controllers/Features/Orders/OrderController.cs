@@ -46,10 +46,15 @@ namespace TunisBrandCo.API.Controllers.Features.Orders
             return Ok(_orderService.updateStatus(orderId, status));
         }
 
-        [HttpGet]
+        [HttpGet("{status}")]
         public IActionResult GetStatus(int orderId)
         {
             return Ok(_orderService.GetStatus(orderId));
+        }
+        [HttpGet]
+        public IActionResult GetOrders()
+        {
+            return Ok(_orderRepository.GetAllOrders());
         }
     }
 }

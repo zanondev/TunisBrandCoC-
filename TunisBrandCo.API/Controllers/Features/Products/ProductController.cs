@@ -3,6 +3,7 @@ using TunisBrandCo.Application.Features.Client;
 using TunisBrandCo.Application.Features.Products;
 using TunisBrandCo.Domain.Features.Clients;
 using TunisBrandCo.Domain.Features.Products;
+using TunisBrandCo.Infra.Data.Features.Clients;
 using TunisBrandCo.Infra.Data.Features.Products;
 
 namespace TunisBrandCo.API.Controllers.Features.Products
@@ -43,6 +44,11 @@ namespace TunisBrandCo.API.Controllers.Features.Products
         public IActionResult AddStock(int productId, int quantity)
         {
             return Ok(_productService.AddStock(productId, quantity));
+        }
+        [HttpGet]
+        public IActionResult GetProducts()
+        {
+            return Ok(_productRepository.GetAllProducts());
         }
     }
 }
