@@ -27,7 +27,7 @@ namespace TunisBrandCo.Application.Features.Order
         {
             _productRepository = productRepository;
             _clientRepository = clientRepository;
-            _productService = productService;
+            _productService = productService;   
             _orderRepository = orderRepository;
         }
 
@@ -44,7 +44,8 @@ namespace TunisBrandCo.Application.Features.Order
                     throw new AlreadyExistsException($"Order Id: {newOrder.Id} already exists.");
             }
 
-            var product = _productRepository.GetProductById(newOrder.Product.Id);
+            var productId = newOrder.Product.Id;
+            var product = _productRepository.GetProductById(productId);
 
             if (product == null)
                 throw new NotFoundException($"Product Id: {product.Id} doesn't exists.");

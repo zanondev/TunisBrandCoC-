@@ -39,8 +39,7 @@ namespace TunisBrandCo.Application.Features.Products
             if (newProduct.Price <= 0)
                 throw new NotAllowedException($"Invalid Price. Must be more than 0.");
 
-            if (newProduct.ExpiryDate > DateTime.Now)
-                throw new NotAllowedException($"Invalid expiry date.");
+          
 
             _productRepository.AddProduct(newProduct);
 

@@ -25,6 +25,9 @@ namespace TunisBrandCo.API.Controllers.Features.Orders
         public OrderController()
         {
             _orderRepository = new OrderRepository();
+            _productRepository = new ProductRepository();   
+            _productService = new ProductService(_productRepository);
+            _clientRepository = new ClientRepository();
             _orderService = new OrderService(_productRepository, _clientRepository, _productService, _orderRepository);
         }
 
