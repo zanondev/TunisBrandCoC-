@@ -113,5 +113,21 @@ namespace TunisBrandCo.Application.Features.Order
 
             return order.Status;
         }
+
+        public object GetOrders()
+        {
+            var orderList = _orderRepository.GetAllOrders();
+
+            foreach(var order in orderList )
+            {
+                var client = _clientRepository.GetClientById(order.Client.Id);
+                order.Client = client;
+
+            }
+
+            return orderList;
+        }
+
+
     }
 }

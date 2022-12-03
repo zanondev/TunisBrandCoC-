@@ -9,7 +9,7 @@ using TunisBrandCo.Infra.Data.Features.Products;
 namespace TunisBrandCo.API.Controllers.Features.Products
 {
     [ApiController]
-    [Route("api/products")]
+    [Route("api/Product")]
 
     public class ProductController : Controller
     {

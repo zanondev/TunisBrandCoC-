@@ -57,7 +57,7 @@ namespace TunisBrandCo.API.Controllers.Features.Orders
         [HttpGet]
         public IActionResult GetOrders()
         {
-            return Ok(_orderRepository.GetAllOrders());
+            return Ok(_orderService.GetOrders());
         }
     }
 }

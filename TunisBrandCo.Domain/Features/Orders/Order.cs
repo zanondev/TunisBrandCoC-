@@ -14,6 +14,8 @@ namespace TunisBrandCo.Domain.Features.Orders
         public int Id { get; set; }
         public Product Product { get; set; }
         public Client Client { get; set; }
+        public int clientId { get; set; }
+        public int productId { get; set; }
         public string ClientName { get; set; }
         public int ProductQuantity { get; set; }
         public decimal TotalPrice { get; set; }

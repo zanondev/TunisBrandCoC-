@@ -132,6 +132,8 @@ namespace TunisBrandCo.Infra.Data.Features.Orders
                 Order order = new Order();
 
                 order.Id = Convert.ToInt32(reader["ID"].ToString());
+                order.Client.Id = Convert.ToInt32(reader["CLIENT_ID"].ToString());
+                order.Product.Id = Convert.ToInt32(reader["PRODUCT_ID"].ToString());
                 order.ClientName = reader["CLIENT_NAME"].ToString();
                 order.ProductQuantity = Convert.ToInt32(reader["PRODUCT_QUANTITY"].ToString());
                 order.TotalPrice = Convert.ToDecimal(reader["TOTAL_PRICE"].ToString());
