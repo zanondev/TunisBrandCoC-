@@ -3396,11 +3396,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.API\\TunisBrandCo.API.csproj",
+      "projectUniqueName": "C:\\Users\\lucas\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.API\\TunisBrandCo.API.csproj",
       "projectName": "TunisBrandCo.API",
-      "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.API\\TunisBrandCo.API.csproj",
+      "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.API\\TunisBrandCo.API.csproj",
       "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.API\\obj\\",
+      "outputPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3417,14 +3417,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Application\\TunisBrandCo.Application.csproj": {
-              "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Application\\TunisBrandCo.Application.csproj"
+            "C:\\Users\\lucas\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Application\\TunisBrandCo.Application.csproj": {
+              "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Application\\TunisBrandCo.Application.csproj"
             },
-            "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Domain\\TunisBrandCo.Domain.csproj": {
-              "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Domain\\TunisBrandCo.Domain.csproj"
+            "C:\\Users\\lucas\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Domain\\TunisBrandCo.Domain.csproj": {
+              "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Domain\\TunisBrandCo.Domain.csproj"
             },
-            "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Infra.Data\\TunisBrandCo.Infra.Data.csproj": {
-              "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCo\\TunisBrandCo.Infra.Data\\TunisBrandCo.Infra.Data.csproj"
+            "C:\\Users\\lucas\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Infra.Data\\TunisBrandCo.Infra.Data.csproj": {
+              "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Infra.Data\\TunisBrandCo.Infra.Data.csproj"
             }
           }
         }

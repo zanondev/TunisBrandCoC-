@@ -16,6 +16,8 @@ namespace TunisBrandCo.API
 {
     public class Startup
     {
+        
+        public string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -26,12 +28,23 @@ namespace TunisBrandCo.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
-            services.AddMvc();
+
             services.AddControllers();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                policy =>
+                                {
+                                    policy.WithOrigins("http://localhost:4200");
+                                    policy.AllowAnyHeader();
+                                    policy.AllowAnyMethod();
+                                });
+            });
+
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TunisBrandCo.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "server.API", Version = "v1" });
             });
         }
 
@@ -40,17 +53,18 @@ namespace TunisBrandCo.API
         {
             if (env.IsDevelopment())
             {
-                app.UseCors(builder => builder.AllowAnyOrigin());
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TunisBrandCo.API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "server.API v1"));
             }
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseEndpoints(endpoints =>
             {
@@ -59,3 +73,4 @@ namespace TunisBrandCo.API
         }
     }
 }
+
