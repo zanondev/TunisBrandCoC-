@@ -24,8 +24,7 @@ namespace TunisBrandCo.Domain.Features.Orders
 
         public Order()
         {
-            if (Client != null)
-                ClientName = Client.Name;
+           
         }
     }
 }

@@ -118,10 +118,14 @@ namespace TunisBrandCo.Application.Features.Order
         {
             var orderList = _orderRepository.GetAllOrders();
 
-            foreach(var order in orderList )
+            foreach(var order in orderList)
             {
-                var client = _clientRepository.GetClientById(order.Client.Id);
+                var client = _clientRepository.GetClientById(order.clientId);
                 order.Client = client;
+                order.ClientName = client.Name;
+                var product = _productRepository.GetProductById(order.productId);
+                order.Product = product;
+
 
             }
 
