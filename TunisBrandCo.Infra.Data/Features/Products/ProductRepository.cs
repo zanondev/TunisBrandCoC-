@@ -33,7 +33,7 @@ namespace TunisBrandCo.Infra.Data.Features.Products
 
         public Product GetProductById(int productId)
         {
-            return _productDAO.GetProductById(productId);
+                return _productDAO.GetProductById(productId);
         }
 
         public void UpdateProduct(Product editedProduct)

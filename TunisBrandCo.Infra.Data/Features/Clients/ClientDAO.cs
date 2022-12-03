@@ -71,6 +71,26 @@ namespace TunisBrandCo.Infra.Data.Features.Clients
             return clientList;
         }
 
+        public void UpdateLoyaltyPoint(int clientId, decimal points)
+        {
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (var DoCommand = new SqlCommand())
+                {
+                    DoCommand.Connection = connection;
+                    string sql = @"UPDATE CLIENT SET            
+                                        LOYALTY_POINTS = @LOYALTY_POINTS
+                                        WHERE ID = @ID;";
+                    DoCommand.Parameters.AddWithValue("@ID", clientId);
+                    DoCommand.Parameters.AddWithValue("@LOYALTY_POINTS", points);
+                    DoCommand.CommandText = sql;
+                    DoCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
         public Client GetClientByCpf(string cpf)
         {
             var wantedClient = new Client();

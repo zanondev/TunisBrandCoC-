@@ -26,6 +26,10 @@ namespace TunisBrandCo.Infra.Data.Features.Clients
         {
             _clientDAO.UpdateClient(editedClient);
         }
+        public void UpdateLoyaltyPoints(int clientId, decimal points)
+        {
+            _clientDAO.UpdateLoyaltyPoint(clientId, points);
+        }
 
         public List<Client> GetAllClients()
         {

@@ -35,9 +35,9 @@ namespace TunisBrandCo.API.Controllers.Features.Products
         }
 
         [HttpPatch]
-        public IActionResult UpdateStatus(Product editedProduct)
+        public IActionResult UpdateStatus(int id)
         {
-            return Ok(_productService.UpdateStatus(editedProduct));
+            return Ok(_productService.UpdateStatus(id));
         }
 
         [HttpPut("{quantity}")]

@@ -47,6 +47,9 @@ namespace TunisBrandCo.Application.Features.Order
             var productId = newOrder.Product.Id;
             var product = _productRepository.GetProductById(productId);
 
+            if (product.IsActive == false)
+                throw new NotAllowedException($"Product is not active.");
+
             if (product == null)
                 throw new NotFoundException($"Product Id: {product.Id} doesn't exists.");
 
@@ -65,8 +68,11 @@ namespace TunisBrandCo.Application.Features.Order
 
             var totalPrice = product.Price * newOrder.ProductQuantity;
 
-            var newLoyaltyPoint = client.LoyaltyPoints + (newOrder.TotalPrice * 2);
+            var newLoyaltyPoint = client.LoyaltyPoints + (totalPrice * 2);
+        
             client.LoyaltyPoints = newLoyaltyPoint;
+
+            _clientRepository.UpdateLoyaltyPoints(client.Id, newLoyaltyPoint);
 
             newOrder.Client = client;
             
@@ -124,8 +130,8 @@ namespace TunisBrandCo.Application.Features.Order
                 order.Client = client;
                 order.ClientName = client.Name;
                 var product = _productRepository.GetProductById(order.productId);
-                order.Product = product;
 
+                order.Product = product;
 
             }
 

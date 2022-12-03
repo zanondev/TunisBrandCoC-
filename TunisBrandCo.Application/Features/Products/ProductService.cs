@@ -111,11 +111,11 @@ namespace TunisBrandCo.Application.Features.Products
             return "Produto alterado com sucesso!";
         }
 
-        public object UpdateStatus(Product editedProduct)
+        public object UpdateStatus(int id)
         {
-            var product = _productRepository.GetProductById(editedProduct.Id);
+            var product = _productRepository.GetProductById(id);
 
-            if ((product.Id != editedProduct.Id) || editedProduct == null)
+            if ((product.Id != id) || id == null)
                 throw new NotFoundException($"Product: {product.Id} doesn't exists.");
 
             bool newStatus = !product.IsActive;

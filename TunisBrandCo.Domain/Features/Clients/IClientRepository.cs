@@ -15,5 +15,6 @@ namespace TunisBrandCo.Domain.Features.Clients
         public List<Client> GetAllClients();
         public Client GetClientByCpf(string cpf);
         Client GetClientById(int clientId);
+        void UpdateLoyaltyPoints(int clientId, decimal points);
     }
 }
