@@ -45,6 +45,7 @@ namespace TunisBrandCo.API.Controllers.Features.Products
         {
             return Ok(_productService.AddStock(productId, quantity));
         }
+
         [HttpGet]
         public IActionResult GetProducts()
         {
