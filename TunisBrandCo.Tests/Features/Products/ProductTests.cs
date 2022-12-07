@@ -141,34 +141,6 @@ namespace TunisBrandCo.Tests.Features.Products
         }
 
         [Test]
-        public void When_ValidateProduct_And_ExpiryDateIsLessThanCurrentDate_Then_MustBeInvalid()
-        {
-            //arrange
-            var _productRepository = new Mock<IProductRepository>();
-
-            var product = new Product()
-            {
-                Id = 1,
-                Description = "Camisa",
-                ExpiryDate = DateTime.Now.AddDays(1),
-                IsActive = true,
-                Price = 10,
-                StockQuantity = 10,
-            };
-
-            var productList = new List<Product>();
-            _productRepository.Setup(x => x.GetAllProducts()).Returns(productList);
-
-            _productRepository.Setup(x => x.AddProduct(product));
-
-            var _productService = new ProductService(_productRepository.Object);
-
-            //action
-            //assert
-            Assert.That(() => _productService.AddProduct(product), Throws.Exception);
-        }
-
-        [Test]
         public void When_GetAllProducts_MustWorks()
         {
             //arrange
