@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8mztdrZQfIRg2QVQqL6JvD484dnqXCmxyb24+oh01wysshDUH3QArYw6GWj/+Xa28uoUyDqdMhCn6QVNvu1qNA==",
+  "dgSpecHash": "xOhmSF3gTQk12+9qUd1gfza+j7V7ngSUyzmBNNMsWkcZSIWGT8FIHAczU/+vFlsqBXX4Ov7OEVnSVXNkmR/s8Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Domain\\TunisBrandCo.Domain.csproj",
+  "projectFilePath": "C:\\Users\\lucas\\source\\repos\\server\\TunisBrandCo.Domain\\TunisBrandCo.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucas\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

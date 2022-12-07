@@ -3133,11 +3133,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lucas\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Domain\\TunisBrandCo.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\lucas\\source\\repos\\server\\TunisBrandCo.Domain\\TunisBrandCo.Domain.csproj",
       "projectName": "TunisBrandCo.Domain",
-      "projectPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Domain\\TunisBrandCo.Domain.csproj",
+      "projectPath": "C:\\Users\\lucas\\source\\repos\\server\\TunisBrandCo.Domain\\TunisBrandCo.Domain.csproj",
       "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lucas\\source\\repos\\TunisBrandCoC-\\TunisBrandCo.Domain\\obj\\",
+      "outputPath": "C:\\Users\\lucas\\source\\repos\\server\\TunisBrandCo.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
