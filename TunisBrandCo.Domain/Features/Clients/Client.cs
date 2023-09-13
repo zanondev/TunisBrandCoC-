@@ -11,17 +11,13 @@ namespace TunisBrandCo.Domain.Features.Clients
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Cpf { get; set; }
+        public string Cpf { get; set; }
         public DateTime BirthDate { get; set; }
         public Decimal LoyaltyPoints { get; set; }
 
-        public Client(int id, string name, int cpf, DateTime birthDate, decimal loyaltyPoints)
+        public Client()
         {
-            Id = id;
-            Name = name;
-            Cpf = cpf;
-            BirthDate = birthDate;
-            LoyaltyPoints = loyaltyPoints;
+         
         }
     }
 }
